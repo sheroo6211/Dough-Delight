@@ -44,8 +44,8 @@ nav {
   letter-spacing: 0.04em; text-decoration: none;
   cursor: pointer;
 }
-.nav-right { display: flex; align-items: center; gap: 2.5rem; }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
   color: var(--tan); text-decoration: none;
   font-size: 0.78rem; font-weight: 400;
@@ -87,7 +87,6 @@ nav {
   background-size: cover; background-position: center 30%;
   z-index: 0;
 }
-/* Visual Reference Dark overlay matches the dark, cozy aesthetics of your photo input */
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
@@ -104,44 +103,34 @@ nav {
       rgba(18,7,2,0.65) 100%
     );
 }
-
 .hero-content {
   position: relative; z-index: 2;
   flex: 1;
   display: grid; grid-template-columns: 1.2fr 0.8fr;
   max-width: 100%;
 }
-
 .hero-left {
   display: flex; flex-direction: column;
   justify-content: center;
   padding: 5rem 3rem 4rem 5rem;
 }
-
 .hero-eyebrow {
   font-size: 0.7rem; letter-spacing: 0.28em;
   text-transform: uppercase; color: var(--tan);
   font-weight: 400; margin-bottom: 1.6rem;
 }
-
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(3.5rem, 6vw, 5.5rem);
   color: #f5eed8; line-height: 1.1; font-weight: 400;
 }
-.hero h1 span {
-  display: block;
-}
-.hero h1 em {
-  font-style: italic; color: var(--tan); display: block;
-}
-
+.hero h1 span { display: block; }
+.hero h1 em { font-style: italic; color: var(--tan); display: block; }
 .hero-line {
   width: 48px; height: 1px;
   background: var(--divider); opacity: 0.7;
   margin: 1.8rem 0;
 }
-
 .hero-sub {
   color: #d8c8a8; font-weight: 300;
   font-size: 1.1rem; line-height: 1.75;
@@ -152,7 +141,6 @@ nav {
   font-size: 1.1rem; font-weight: 300;
   margin-bottom: 0;
 }
-
 .hero-btn {
   display: inline-block; margin-top: 2.2rem;
   padding: 1rem 2.6rem;
@@ -165,8 +153,7 @@ nav {
   font-family: inherit; text-decoration: none;
 }
 .hero-btn:hover { background: var(--brown-light); color: var(--brown-dark); }
-
-.hero-right { /* Layout space allowing display of artisan loaf artwork */ }
+.hero-right { }
 
 /* BADGES */
 .hero-badges {
@@ -267,6 +254,324 @@ nav {
 .stall-box { border: 1px solid var(--divider); padding: 3rem; background: var(--cream); }
 .stall-box p { color: var(--text-body); font-weight: 300; max-width: 520px; margin: 0 auto; font-size: 1.05rem; }
 
+/* ══════════════════════════════════
+   REVIEWS SECTION
+══════════════════════════════════ */
+.reviews-section {
+  background: var(--cream-light);
+  border-top: 1px solid var(--sand);
+  padding: 5.5rem 0;
+  position: relative; z-index: 1;
+}
+.reviews-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Stats bar */
+.reviews-stats {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  padding: 1.8rem 2.5rem;
+  margin-bottom: 3rem;
+}
+.stats-score {
+  text-align: center;
+  flex-shrink: 0;
+}
+.stats-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: var(--brown-dark);
+  line-height: 1;
+  display: block;
+}
+.stats-stars-display {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin: 0.4rem 0 0.3rem;
+}
+.stats-stars-display .star-filled { color: #C4875A; font-size: 1.1rem; }
+.stats-stars-display .star-empty { color: #D4C5A8; font-size: 1.1rem; }
+.stats-count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+.stats-divider {
+  width: 1px;
+  height: 60px;
+  background: var(--sand);
+  flex-shrink: 0;
+}
+.stats-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.bar-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  width: 38px;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 300;
+}
+.bar-track {
+  flex: 1;
+  height: 7px;
+  background: var(--sand);
+  border-radius: 0;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: var(--brown-warm);
+  transition: width 0.6s ease;
+}
+.bar-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  width: 20px;
+  font-weight: 300;
+}
+
+/* Write a review form */
+.review-form-wrap {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+.review-form-wrap h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+.review-form-wrap p.form-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 1.8rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--cream-light);
+  border: 1px solid var(--sand);
+  padding: 0.75rem 1rem;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  color: var(--text-body);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--brown-light);
+}
+.form-group select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A5C3F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Star rating picker */
+.star-picker {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.2rem;
+}
+.star-picker span {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #D4C5A8;
+  transition: color 0.15s, transform 0.1s;
+  user-select: none;
+  line-height: 1;
+}
+.star-picker span:hover,
+.star-picker span.active { color: #C4875A; }
+.star-picker span:active { transform: scale(0.88); }
+
+.review-textarea { margin-bottom: 1.5rem; }
+.review-textarea textarea { min-height: 110px; }
+
+.submit-btn {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: var(--brown-warm);
+  color: var(--cream-light);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid var(--brown-light);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.submit-btn:hover { background: var(--brown-light); color: var(--brown-dark); }
+
+.form-success {
+  display: none;
+  background: rgba(139,78,40,0.1);
+  border: 1px solid rgba(139,78,40,0.3);
+  padding: 1rem 1.5rem;
+  color: var(--brown-warm);
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin-top: 1.2rem;
+}
+.form-success.visible { display: block; }
+
+/* Reviews grid */
+.reviews-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+.reviews-toolbar h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--brown-dark);
+  font-weight: 400;
+}
+.sort-select {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  padding: 0.45rem 2rem 0.45rem 0.8rem;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 10 7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237A5C3F' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  padding: 1.8rem;
+  position: relative;
+  animation: fadeInUp 0.35s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.review-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+.reviewer-info { display: flex; flex-direction: column; }
+.reviewer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+.reviewer-item {
+  font-size: 0.78rem;
+  color: var(--brown-light);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  font-style: italic;
+}
+.review-stars {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.review-stars .s-f { color: #C4875A; font-size: 0.95rem; }
+.review-stars .s-e { color: #D4C5A8; font-size: 0.95rem; }
+
+.review-text {
+  font-size: 0.97rem;
+  color: var(--text-body);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.review-date {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* Quote mark decoration */
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--sand);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.no-reviews {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: var(--cream);
+  border: 1px dashed var(--divider);
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
 /* FOOTER */
 footer { background: var(--chocolate); color: var(--tan); text-align: center; padding: 2.5rem; font-size: 0.88rem; font-weight: 300; letter-spacing: 0.04em; position: relative; z-index: 1; border-top: 1px solid rgba(196,135,90,0.15); }
 footer strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; font-weight: 400; }
@@ -275,12 +580,15 @@ footer a:hover { color: var(--cream); }
 
 @media (max-width: 800px) {
   nav { padding: 0 1.2rem; }
-  .nav-links { gap: 1.2rem; }
+  .nav-links { gap: 1rem; }
   .hero-content { grid-template-columns: 1fr; }
   .hero-left { padding: 3.5rem 1.5rem 2.5rem; }
   .hero-badges { grid-template-columns: 1fr 1fr; }
-  .about-grid, .menu-categories, .order-inner { grid-template-columns: 1fr; }
-  #about, .menu-inner, .order-inner, .stall-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .about-grid, .menu-categories, .order-inner, .reviews-grid { grid-template-columns: 1fr; }
+  #about, .menu-inner, .order-inner, .stall-section, .reviews-inner { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .reviews-stats { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .stats-divider { width: 60px; height: 1px; }
 }
 </style>
 </head>
@@ -292,6 +600,7 @@ footer a:hover { color: var(--cream); }
     <ul class="nav-links">
       <li><a onclick="scrollToSection('menu')">Menu</a></li>
       <li><a onclick="scrollToSection('order')">Order</a></li>
+      <li><a onclick="scrollToSection('reviews')">Reviews</a></li>
       <li><a onclick="scrollToSection('about')">About</a></li>
     </ul>
     <a class="nav-cta" onclick="scrollToSection('order')">Place an Order</a>
@@ -308,10 +617,7 @@ footer a:hover { color: var(--cream); }
   <div class="hero-content">
     <div class="hero-left">
       <p class="hero-eyebrow">Artisan Baked Goods &mdash; Karachi, Pakistan</p>
-      <h1>
-        <span>Dough</span>
-        <em>Delight</em>
-      </h1>
+      <h1><span>Dough</span><em>Delight</em></h1>
       <div class="hero-line"></div>
       <p class="hero-sub">Every loaf, every crumb, every bite baked with care and intention.</p>
       <p class="hero-sub-italic">Good things take time &mdash; let us bake yours.</p>
@@ -434,6 +740,96 @@ footer a:hover { color: var(--cream); }
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════
+     REVIEWS SECTION
+══════════════════════════════════════════════ -->
+<div class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+
+    <p class="section-label">Customer Reviews</p>
+    <h2 class="section-heading">What our customers <em>are saying</em></h2>
+    <div class="ornament"><div class="ornament-dot"></div></div>
+
+    <!-- Rating overview -->
+    <div class="reviews-stats" id="reviewsStats">
+      <div class="stats-score">
+        <span class="stats-number" id="avgScore">-</span>
+        <div class="stats-stars-display" id="avgStars"></div>
+        <span class="stats-count" id="totalCount">No reviews yet</span>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stats-bars" id="statsBars">
+        <div class="bar-row"><span class="bar-label">5 stars</span><div class="bar-track"><div class="bar-fill" id="bar5" style="width:0%"></div></div><span class="bar-count" id="cnt5">0</span></div>
+        <div class="bar-row"><span class="bar-label">4 stars</span><div class="bar-track"><div class="bar-fill" id="bar4" style="width:0%"></div></div><span class="bar-count" id="cnt4">0</span></div>
+        <div class="bar-row"><span class="bar-label">3 stars</span><div class="bar-track"><div class="bar-fill" id="bar3" style="width:0%"></div></div><span class="bar-count" id="cnt3">0</span></div>
+        <div class="bar-row"><span class="bar-label">2 stars</span><div class="bar-track"><div class="bar-fill" id="bar2" style="width:0%"></div></div><span class="bar-count" id="cnt2">0</span></div>
+        <div class="bar-row"><span class="bar-label">1 star</span><div class="bar-track"><div class="bar-fill" id="bar1" style="width:0%"></div></div><span class="bar-count" id="cnt1">0</span></div>
+      </div>
+    </div>
+
+    <!-- Write a review -->
+    <div class="review-form-wrap">
+      <h3>Leave a Review</h3>
+      <p class="form-sub">Tried something from Dough Delight? We would love to hear about it.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="reviewName" placeholder="e.g. Fatima A." maxlength="60">
+        </div>
+        <div class="form-group">
+          <label>Item Ordered</label>
+          <select id="reviewItem">
+            <option value="">Select an item...</option>
+            <option>Banana Bread - Plain</option>
+            <option>Banana Bread - With Walnuts</option>
+            <option>Banana Bread - With Chocolate Chips</option>
+            <option>Cupcakes - Vanilla (Box of 6)</option>
+            <option>Cupcakes - Chocolate (Box of 6)</option>
+            <option>Cupcakes - Chocolate Filled (Box of 6)</option>
+            <option>Cookies - Plain Chocolate Chip</option>
+            <option>Cookies - With Chocolate Chunks</option>
+            <option>Chocolate Cake - 1 Pound with Frosting</option>
+            <option>Customised Gift Basket</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:1.2rem;">
+        <label>Your Rating</label>
+        <div class="star-picker" id="starPicker">
+          <span data-val="1">&#9733;</span>
+          <span data-val="2">&#9733;</span>
+          <span data-val="3">&#9733;</span>
+          <span data-val="4">&#9733;</span>
+          <span data-val="5">&#9733;</span>
+        </div>
+      </div>
+
+      <div class="form-group review-textarea">
+        <label>Your Review</label>
+        <textarea id="reviewText" placeholder="Tell us what you thought about the taste, freshness, packaging..." maxlength="600"></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="submitReview()">Post Review</button>
+      <div class="form-success" id="formSuccess">Thank you for your review. It has been posted below.</div>
+    </div>
+
+    <!-- Reviews list -->
+    <div class="reviews-toolbar">
+      <h4 id="reviewsHeading">All Reviews</h4>
+      <select class="sort-select" id="sortSelect" onchange="renderReviews()">
+        <option value="newest">Newest first</option>
+        <option value="highest">Highest rated</option>
+        <option value="lowest">Lowest rated</option>
+      </select>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid"></div>
+
+  </div>
+</div>
+
 <footer>
   <strong>Dough Delight</strong>
   Karachi, Pakistan &nbsp;&bull;&nbsp;
@@ -444,12 +840,173 @@ footer a:hover { color: var(--cream); }
 </footer>
 
 <script>
+// ── Scroll helper ──
 function scrollToSection(id) {
   var el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Star picker ──
+var selectedRating = 0;
+var stars = document.querySelectorAll('#starPicker span');
+
+stars.forEach(function(star) {
+  star.addEventListener('mouseover', function() {
+    var val = parseInt(this.getAttribute('data-val'));
+    stars.forEach(function(s, i) {
+      s.classList.toggle('active', i < val);
+    });
+  });
+  star.addEventListener('mouseout', function() {
+    stars.forEach(function(s, i) {
+      s.classList.toggle('active', i < selectedRating);
+    });
+  });
+  star.addEventListener('click', function() {
+    selectedRating = parseInt(this.getAttribute('data-val'));
+    stars.forEach(function(s, i) {
+      s.classList.toggle('active', i < selectedRating);
+    });
+  });
+});
+
+// ── Storage ──
+function loadReviews() {
+  try {
+    return JSON.parse(localStorage.getItem('dd_reviews') || '[]');
+  } catch(e) { return []; }
+}
+function saveReviews(reviews) {
+  localStorage.setItem('dd_reviews', JSON.stringify(reviews));
+}
+
+// ── Submit ──
+function submitReview() {
+  var name = document.getElementById('reviewName').value.trim();
+  var item = document.getElementById('reviewItem').value;
+  var text = document.getElementById('reviewText').value.trim();
+
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!selectedRating) { alert('Please select a star rating.'); return; }
+  if (!text) { alert('Please write a short review.'); return; }
+
+  var review = {
+    id: Date.now(),
+    name: name,
+    item: item || 'General',
+    rating: selectedRating,
+    text: text,
+    date: new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })
+  };
+
+  var reviews = loadReviews();
+  reviews.unshift(review);
+  saveReviews(reviews);
+
+  // Reset form
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewItem').value = '';
+  document.getElementById('reviewText').value = '';
+  selectedRating = 0;
+  stars.forEach(function(s) { s.classList.remove('active'); });
+
+  var succ = document.getElementById('formSuccess');
+  succ.classList.add('visible');
+  setTimeout(function() { succ.classList.remove('visible'); }, 4000);
+
+  renderReviews();
+  updateStats();
+}
+
+// ── Render stars HTML ──
+function starsHtml(rating, cls1, cls2) {
+  var h = '';
+  for (var i = 1; i <= 5; i++) {
+    h += '<span class="' + (i <= rating ? cls1 : cls2) + '">&#9733;</span>';
+  }
+  return h;
+}
+
+// ── Render reviews ──
+function renderReviews() {
+  var reviews = loadReviews();
+  var sort = document.getElementById('sortSelect').value;
+
+  if (sort === 'highest') reviews.sort(function(a,b){ return b.rating - a.rating; });
+  else if (sort === 'lowest') reviews.sort(function(a,b){ return a.rating - b.rating; });
+  // newest is default (already newest-first from unshift)
+
+  var grid = document.getElementById('reviewsGrid');
+  var heading = document.getElementById('reviewsHeading');
+  heading.textContent = reviews.length > 0
+    ? reviews.length + ' Review' + (reviews.length !== 1 ? 's' : '')
+    : 'All Reviews';
+
+  if (reviews.length === 0) {
+    grid.innerHTML = '<div class="no-reviews">No reviews yet. Be the first to share your experience.</div>';
+    return;
+  }
+
+  grid.innerHTML = reviews.map(function(r, idx) {
+    return '<div class="review-card" style="animation-delay:' + (idx * 0.05) + 's">' +
+      '<div class="review-card-header">' +
+        '<div class="reviewer-info">' +
+          '<span class="reviewer-name">' + escHtml(r.name) + '</span>' +
+          '<span class="reviewer-item">' + escHtml(r.item) + '</span>' +
+        '</div>' +
+        '<div class="review-stars">' + starsHtml(r.rating, 's-f', 's-e') + '</div>' +
+      '</div>' +
+      '<p class="review-text">' + escHtml(r.text) + '</p>' +
+      '<span class="review-date">' + r.date + '</span>' +
+    '</div>';
+  }).join('');
+}
+
+// ── Update stats bar ──
+function updateStats() {
+  var reviews = loadReviews();
+  var total = reviews.length;
+
+  if (total === 0) {
+    document.getElementById('avgScore').textContent = '-';
+    document.getElementById('avgStars').innerHTML = starsHtml(0, 'star-filled', 'star-empty');
+    document.getElementById('totalCount').textContent = 'No reviews yet';
+    for (var i = 1; i <= 5; i++) {
+      document.getElementById('bar' + i).style.width = '0%';
+      document.getElementById('cnt' + i).textContent = '0';
+    }
+    return;
+  }
+
+  var sum = 0;
+  var counts = {1:0,2:0,3:0,4:0,5:0};
+  reviews.forEach(function(r) { sum += r.rating; counts[r.rating]++; });
+
+  var avg = (sum / total).toFixed(1);
+  document.getElementById('avgScore').textContent = avg;
+  document.getElementById('avgStars').innerHTML = starsHtml(Math.round(avg), 'star-filled', 'star-empty');
+  document.getElementById('totalCount').textContent = total + ' review' + (total !== 1 ? 's' : '');
+
+  for (var n = 1; n <= 5; n++) {
+    var pct = total > 0 ? Math.round((counts[n] / total) * 100) : 0;
+    document.getElementById('bar' + n).style.width = pct + '%';
+    document.getElementById('cnt' + n).textContent = counts[n];
   }
 }
+
+// ── Escape HTML ──
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/\n/g,'<br>');
+}
+
+// ── Init ──
+renderReviews();
+updateStats();
 </script>
 </body>
 </html>
